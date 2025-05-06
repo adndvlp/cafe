@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Café Premium 100gr | Amor al Café</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#F10EAA",
+              secondary: "#0EF155",
+              dark: "#0C0109",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #fafafa;
+        color: #333;
+      }
+
+      .hero-gradient {
+        background: linear-gradient(135deg, #0c0109 0%, #1a1a2e 100%);
+      }
+
+      .product-card {
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      }
+
+      .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn-primary {
+        background-color: #f10eaa;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        background-color: #d40d95;
+        transform: translateY(-2px);
+      }
+
+      .btn-secondary {
+        background-color: #0ef155;
+        transition: all 0.3s ease;
+        color: #0c0109;
+      }
+
+      .btn-secondary:hover {
+        background-color: #0cd84d;
+        transform: translateY(-2px);
+      }
+
+      .flavor-dot {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 8px;
+      }
+
+      .flavor-profile {
+        height: 6px;
+        border-radius: 3px;
+        margin-top: 8px;
+      }
+
+      .nav-link {
+        position: relative;
+      }
+
+      .nav-link:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -2px;
+        left: 0;
+        background-color: #0ef155;
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover:after {
+        width: 100%;
+      }
+
+      .pulse-animation {
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header/Navbar -->
+    <header class="hero-gradient text-white sticky top-0 z-50 shadow-lg">
+      <div
+        class="container mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <div class="flex items-center">
+          <i class="fas fa-coffee text-secondary text-2xl mr-2"></i>
+          <a id="buenas" href="#" class="text-2xl font-bold"
+            >Labrillante<span class="text-primary">Café</span></a
+          >
+        </div>
+        <nav class="hidden md:flex space-x-8">
+          <a href="#producto" class="nav-link">Producto</a>
+          <a href="#beneficios" class="nav-link">Beneficios</a>
+          <a href="#sabor" class="nav-link">Perfil de Sabor</a>
+          <a href="#testimonios" class="nav-link">Testimonios</a>
+        </nav>
+        <div class="flex items-center space-x-4">
+          <a href="#" class="hover:text-secondary"
+            ><i class="fas fa-shopping-cart"></i
+          ></a>
+          <button class="md:hidden text-xl" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="md:hidden hidden bg-dark py-4 px-4" id="mobile-menu">
+        <div class="flex flex-col space-y-3">
+          <a href="#producto" class="nav-link py-2">Producto</a>
+          <a href="#beneficios" class="nav-link py-2">Beneficios</a>
+          <a href="#sabor" class="nav-link py-2">Perfil de Sabor</a>
+          <a href="#testimonios" class="nav-link py-2">Testimonios</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-16">
+      <div
+        class="container mx-auto px-4 flex flex-col md:flex-row items-center"
+      >
+        <div class="md:w-1/2 mb-10 md:mb-0">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            Café Premium <span class="text-primary">100% Orgánico</span>
+          </h1>
+          <p class="text-lg mb-6 text-gray-300">
+            Disfruta del auténtico sabor del café chiapaneco en cada taza.
+            Nuestro café liofilizado de 100gr conserva todo el aroma y
+            propiedades de los granos recién tostados.
+          </p>
+          <div
+            class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4"
+          >
+            <a
+              href="#comprar"
+              class="btn-primary py-3 px-8 rounded-full font-bold text-center pulse-animation"
+            >
+              COMPRAR AHORA <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+            <a
+              href="#sabor"
+              class="btn-secondary py-3 px-8 rounded-full font-bold text-center"
+            >
+              CONOCE EL SABOR <i class="fas fa-coffee ml-2"></i>
+            </a>
+          </div>
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+          <img
+            src="/img/bolsa.png"
+            alt="Café AmorCafé 100gr"
+            class="w-full max-w-md rounded-lg shadow-2xl border-4 border-secondary transform rotate-3 hover:rotate-0 transition duration-500"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Section -->
+    <section id="producto" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-dark">
+          Nuestro <span class="text-primary">Producto</span> Exclusivo
+        </h2>
+
+        <div class="flex flex-col lg:flex-row items-center">
+          <div class="lg:w-1/2 mb-10 lg:mb-0 flex justify-center">
+            <div class="relative">
+              <img
+                src="img/cafe.png"
+                alt="Café 100gr"
+                class="w-full max-w-md rounded-lg shadow-xl"
+              />
+              <div
+                class="absolute -bottom-5 -right-5 bg-primary text-white py-2 px-4 rounded-full font-bold shadow-lg"
+              >
+                <span class="text-2xl">$120</span> MXN
+              </div>
+              <div
+                class="absolute -top-5 -left-5 bg-secondary text-dark py-2 px-4 rounded-full font-bold shadow-lg"
+              >
+                <span>100gr</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:w-1/2 lg:pl-12">
+            <h3 class="text-2xl font-bold mb-4 text-dark">
+              Café <span class="text-primary">Liofilizado</span> 100gr
+            </h3>
+            <p class="text-gray-700 mb-6">
+              Nuestro proceso de liofilización conserva intactos los aromas y
+              sabores del café recién tostado, ofreciéndote una experiencia
+              única en cada taza.
+            </p>
+
+            <div class="mb-6">
+              <h4 class="font-bold mb-2 text-dark">Características:</h4>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                  <span>100% granos de café Arábica</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                  <span>Proceso de liofilización premium</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                  <span>Origen: Chiapas, México</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                  <span>Tostado medio para equilibrio perfecto</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                  <span>Empaque hermético para máxima frescura</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="flex items-center mb-6">
+              <div class="flex items-center mr-6">
+                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                <span class="ml-2 text-gray-700">4.9 (128)</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-fire text-primary mr-1"></i>
+                <span class="text-gray-700">+1,000 vendidos</span>
+              </div>
+            </div>
+
+            <div id="comprar" class="bg-gray-100 p-4 rounded-lg">
+              <div class="flex items-center justify-between mb-4">
+                <span class="font-bold text-dark">Cantidad:</span>
+                <div
+                  class="flex items-center border border-gray-300 rounded-full"
+                >
+                  <button class="px-3 py-1 text-lg">-</button>
+                  <span class="px-4">1</span>
+                  <button class="px-3 py-1 text-lg">+</button>
+                </div>
+              </div>
+              <button class="btn-primary w-full py-3 rounded-full font-bold">
+                AÑADIR AL CARRITO <i class="fas fa-shopping-cart ml-2"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="beneficios" class="py-16 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-dark">
+          Beneficios del <span class="text-primary">Café Liofilizado</span>
+        </h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="product-card bg-white p-6 rounded-lg">
+            <div
+              class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-leaf text-primary text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-dark">100% Natural</h3>
+            <p class="text-gray-700">
+              Sin conservantes ni aditivos artificiales. Solo el auténtico sabor
+              del café en su estado más puro.
+            </p>
+          </div>
+
+          <div class="product-card bg-white p-6 rounded-lg">
+            <div
+              class="w-12 h-12 bg-secondary bg-opacity-10 rounded-full flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-clock text-secondary text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-dark">Preparación Rápida</h3>
+            <p class="text-gray-700">
+              Disfruta de una taza de café de calidad en segundos, sin necesidad
+              de equipos especializados.
+            </p>
+          </div>
+
+          <div class="product-card bg-white p-6 rounded-lg">
+            <div
+              class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-wine-bottle text-primary text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-dark">Larga Duración</h3>
+            <p class="text-gray-700">
+              Gracias a nuestro proceso de liofilización, el café mantiene su
+              frescura por mucho más tiempo.
+            </p>
+          </div>
+
+          <div class="product-card bg-white p-6 rounded-lg">
+            <div
+              class="w-12 h-12 bg-secondary bg-opacity-10 rounded-full flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-mountain text-secondary text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-dark">Altura Premium</h3>
+            <p class="text-gray-700">
+              Cultivado a más de 1,200 metros sobre el nivel del mar,
+              garantizando granos de la más alta calidad.
+            </p>
+          </div>
+
+          <div class="product-card bg-white p-6 rounded-lg">
+            <div
+              class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-heart text-primary text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-dark">
+              Beneficios Saludables
+            </h3>
+            <p class="text-gray-700">
+              Rico en antioxidantes y nutrientes que contribuyen a tu bienestar
+              y energía durante el día.
+            </p>
+          </div>
+
+          <div class="product-card bg-white p-6 rounded-lg">
+            <div
+              class="w-12 h-12 bg-secondary bg-opacity-10 rounded-full flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-recycle text-secondary text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-dark">Empaque Ecológico</h3>
+            <p class="text-gray-700">
+              Nuestro empaque es 100% reciclable y diseñado para minimizar el
+              impacto ambiental.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Flavor Profile Section -->
+    <section id="sabor" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-dark">
+          Perfil de <span class="text-primary">Sabor</span>
+        </h2>
+
+        <div class="flex flex-col lg:flex-row items-center">
+          <div class="lg:w-1/2 mb-10 lg:mb-0">
+            <div class="bg-gray-100 p-6 rounded-lg">
+              <h3 class="text-xl font-bold mb-4 text-dark">Notas de Cata</h3>
+
+              <div class="mb-6">
+                <div class="flex justify-between mb-1">
+                  <span class="font-medium">Acidez</span>
+                  <span>70%</span>
+                </div>
+                <div class="w-full bg-gray-300 rounded-full h-2">
+                  <div
+                    class="bg-primary h-2 rounded-full"
+                    style="width: 70%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="mb-6">
+                <div class="flex justify-between mb-1">
+                  <span class="font-medium">Dulzor</span>
+                  <span>85%</span>
+                </div>
+                <div class="w-full bg-gray-300 rounded-full h-2">
+                  <div
+                    class="bg-secondary h-2 rounded-full"
+                    style="width: 85%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="mb-6">
+                <div class="flex justify-between mb-1">
+                  <span class="font-medium">Cuerpo</span>
+                  <span>60%</span>
+                </div>
+                <div class="w-full bg-gray-300 rounded-full h-2">
+                  <div
+                    class="bg-primary h-2 rounded-full"
+                    style="width: 60%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="mb-6">
+                <div class="flex justify-between mb-1">
+                  <span class="font-medium">Aroma</span>
+                  <span>90%</span>
+                </div>
+                <div class="w-full bg-gray-300 rounded-full h-2">
+                  <div
+                    class="bg-secondary h-2 rounded-full"
+                    style="width: 90%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:w-1/2 lg:pl-12">
+            <h3 class="text-2xl font-bold mb-4 text-dark">
+              Descubre una <span class="text-primary">Experiencia</span> Única
+            </h3>
+            <p class="text-gray-700 mb-6">
+              Nuestro café liofilizado ofrece un perfil de sabor equilibrado,
+              con notas distintivas que deleitarán tu paladar:
+            </p>
+
+            <div class="grid grid-cols-2 gap-4 mb-6">
+              <div class="flex items-center">
+                <span class="flavor-dot bg-amber-300"></span>
+                <span>Caramelo</span>
+              </div>
+              <div class="flex items-center">
+                <span class="flavor-dot bg-yellow-600"></span>
+                <span>Chocolate</span>
+              </div>
+              <div class="flex items-center">
+                <span class="flavor-dot bg-red-300"></span>
+                <span>Frutas Rojas</span>
+              </div>
+              <div class="flex items-center">
+                <span class="flavor-dot bg-brown-300"></span>
+                <span>Nuez</span>
+              </div>
+            </div>
+
+            <div class="mb-6">
+              <h4 class="font-bold mb-2 text-dark">Intensidad del Sabor:</h4>
+              <div class="flex items-center">
+                <div class="flavor-profile bg-gray-300 w-full">
+                  <div class="flavor-profile bg-dark" style="width: 75%"></div>
+                </div>
+                <span class="ml-2 font-medium">Media-Alta</span>
+              </div>
+            </div>
+
+            <div
+              class="bg-primary bg-opacity-10 p-4 rounded-lg border-l-4 border-primary"
+            >
+              <h4 class="font-bold mb-2 text-dark">
+                Recomendación de Preparación:
+              </h4>
+              <p class="text-gray-700">
+                Para disfrutar al máximo el sabor, disuelve 2 cucharaditas en
+                180ml de agua caliente (no hirviendo). Añade leche o azúcar al
+                gusto.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonios" class="py-16 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-dark">
+          Lo que dicen nuestros <span class="text-primary">Clientes</span>
+        </h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="product-card bg-white p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center mr-2">
+                <i class="fas fa-star text-yellow-400"></i>
+                <i class="fas fa-star text-yellow-400"></i>
+                <i class="fas fa-star text-yellow-400"></i>
+                <i class="fas fa-star text-yellow-400"></i>
+                <i class="fas fa-star text-yellow-400"></i>
+              </div>
+              <span class="text-sm text-gray-600">Hace 2 semanas</span>
+            </div>
+            <p class="text-gray-700 mb-4">
+              "El mejor café instantáneo que he probado. El sabor es
+              increíblemente rico y aromático, parece café recién hecho."
+            </p>
+            <div class="flex items-center">
+              <div
+                class="w-10 h-10 rounded-full bg-primary bg-opacity-20 flex items-center justify-center mr-3"
+              >
+                <span class="font-bold text-primary">M</span>
+              </div>
+              <div>
+                <h4 class="font-medium text-dark">María G.</h4>
+                <span class="text-sm text-gray-600">Ciudad de México</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card bg-white p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center mr-2">
+                <i class="fas fa-star text-yellow-400"></i>
+                <i class="fas fa-star text-yellow-400"></i>
+                <i class="fas fa-star text-yellow-400"></i>
+                <i class="fas fa-star text-yellow-400"></i>
+                <i class="fas fa-star text-yellow-400"></i>
+              </div>
+              <span class="text-sm text-gray-600">Hace 1 mes</span>
+            </div>
+            <p class="text-gray-700 mb-4">
+              "Soy barista y puedo asegurar que este café liofilizado mantiene
+              características de un buen café de especialidad. Excelente
+              producto."
+            </p>
+            <div class="flex items-center">
+              <div
+                class="w-10 h-10 rounded-full bg-secondary bg-opacity-20 flex items-center justify-center mr-3"
+              >
+                <span class="font-bold text-secondary">J</span>
+              </div>
+              <div>
+                <h4 class="font-medium text-dark">Juan P.</h4>
+                <span class="text-sm text-gray-600">Guadalajara</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card bg-white p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center mr-2">
+                <i class="fas fa-star text-yellow-400"></i>
+                <i class="fas fa-star text-yellow-400"></i>
+                <i class="fas fa-star text-yellow-400"></i>
+                <i class="fas fa-star text-yellow-400"></i>
+                <i class="fas fa-star-half-alt text-yellow-400"></i>
+              </div>
+              <span class="text-sm text-gray-600">Hace 3 días</span>
+            </div>
+            <p class="text-gray-700 mb-4">
+              "Me encanta el equilibrio entre acidez y dulzor. Perfecto para mis
+              mañanas ocupadas cuando no tengo tiempo para preparar café
+              filtrado."
+            </p>
+            <div class="flex items-center">
+              <div
+                class="w-10 h-10 rounded-full bg-primary bg-opacity-20 flex items-center justify-center mr-3"
+              >
+                <span class="font-bold text-primary">A</span>
+              </div>
+              <div>
+                <h4 class="font-medium text-dark">Ana L.</h4>
+                <span class="text-sm text-gray-600">Monterrey</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <a
+            href="#"
+            class="inline-block btn-primary py-3 px-8 rounded-full font-bold"
+          >
+            VER MÁS OPINIONES <i class="fas fa-chevron-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <h2 class="text-3xl font-bold text-center mb-12 text-dark">
+          Preguntas <span class="text-primary">Frecuentes</span>
+        </h2>
+
+        <div class="space-y-4">
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button
+              class="faq-question w-full text-left p-4 bg-gray-50 hover:bg-gray-100 font-medium flex justify-between items-center"
+            >
+              <span>¿Qué hace especial al café liofilizado?</span>
+              <i
+                class="fas fa-chevron-down transition-transform duration-300"
+              ></i>
+            </button>
+            <div class="faq-answer hidden p-4 border-t border-gray-200">
+              <p class="text-gray-700">
+                El proceso de liofilización conserva mejor los aceites
+                esenciales y compuestos aromáticos del café, a diferencia de
+                otros métodos de deshidratación. Esto resulta en un café
+                instantáneo con un perfil de sabor mucho más cercano al café
+                recién preparado.
+              </p>
+            </div>
+          </div>
+
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button
+              class="faq-question w-full text-left p-4 bg-gray-50 hover:bg-gray-100 font-medium flex justify-between items-center"
+            >
+              <span
+                >¿Cuántas tazas de café puedo preparar con un frasco de
+                100gr?</span
+              >
+              <i
+                class="fas fa-chevron-down transition-transform duration-300"
+              ></i>
+            </button>
+            <div class="faq-answer hidden p-4 border-t border-gray-200">
+              <p class="text-gray-700">
+                Con nuestro frasco de 100gr puedes preparar aproximadamente
+                40-50 tazas de café, dependiendo de qué tan fuerte prefieras tu
+                bebida. Recomendamos usar 2-2.5gr por cada 180ml de agua.
+              </p>
+            </div>
+          </div>
+
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button
+              class="faq-question w-full text-left p-4 bg-gray-50 hover:bg-gray-100 font-medium flex justify-between items-center"
+            >
+              <span>¿El café contiene azúcar o ingredientes añadidos?</span>
+              <i
+                class="fas fa-chevron-down transition-transform duration-300"
+              ></i>
+            </button>
+            <div class="faq-answer hidden p-4 border-t border-gray-200">
+              <p class="text-gray-700">
+                No, nuestro café es 100% puro sin aditivos, azúcares ni
+                conservantes. El dulzor natural proviene de los granos de alta
+                calidad y el proceso de tostado.
+              </p>
+            </div>
+          </div>
+
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button
+              class="faq-question w-full text-left p-4 bg-gray-50 hover:bg-gray-100 font-medium flex justify-between items-center"
+            >
+              <span>¿Cuál es la vida útil del producto?</span>
+              <i
+                class="fas fa-chevron-down transition-transform duration-300"
+              ></i>
+            </button>
+            <div class="faq-answer hidden p-4 border-t border-gray-200">
+              <p class="text-gray-700">
+                Gracias a nuestro proceso de liofilización y empaque hermético,
+                el café mantiene su frescura y calidad por hasta 24 meses desde
+                la fecha de producción. Una vez abierto, recomendamos consumirlo
+                dentro de los 3 meses para disfrutar al máximo de sus
+                características.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 hero-gradient text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-6">
+          ¿Listo para disfrutar del mejor
+          <span class="text-primary">café liofilizado</span>?
+        </h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto text-gray-300">
+          Únete a miles de amantes del café que ya descubrieron la diferencia de
+          LabrillanteCafé.
+        </p>
+        <a
+          href="#comprar"
+          class="inline-block btn-secondary py-4 px-12 rounded-full font-bold text-lg"
+        >
+          COMPRAR AHORA <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <div class="flex items-center mb-4">
+              <i class="fas fa-coffee text-secondary text-2xl mr-2"></i>
+              <a href="#buenas" class="text-2xl font-bold"
+                >Labrillante<span class="text-primary">Café</span></a
+              >
+            </div>
+            <p class="text-gray-400 mb-4">
+              El auténtico sabor del café mexicano en cada taza.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-secondary"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="text-gray-400 hover:text-secondary"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="text-gray-400 hover:text-secondary"
+                ><i class="fab fa-twitter"></i
+              ></a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-bold mb-4">Productos</h4>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-secondary"
+                  >Café Liofilizado</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-secondary"
+                  >Café Molido</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-secondary"
+                  >Café en Grano</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-secondary"
+                  >Ediciones Limitadas</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-bold mb-4">Empresa</h4>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-secondary"
+                  >Nuestra Historia</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-secondary"
+                  >Proceso de Producción</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-secondary"
+                  >Trabaja con Nosotros</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-secondary"
+                  >Contacto</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-bold mb-4">Ayuda</h4>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-secondary"
+                  >Preguntas Frecuentes</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-secondary"
+                  >Envíos y Devoluciones</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-secondary"
+                  >Métodos de Pago</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-secondary"
+                  >Términos y Condiciones</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="pt-8 border-t border-gray-800 text-center text-gray-500 text-sm"
+        >
+          <p>© 2025 LabrillanteCafé. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      document
+        .getElementById("menu-toggle")
+        .addEventListener("click", function () {
+          const menu = document.getElementById("mobile-menu");
+          menu.classList.toggle("hidden");
+        });
+
+      // FAQ accordion
+      const faqQuestions = document.querySelectorAll(".faq-question");
+      faqQuestions.forEach((question) => {
+        question.addEventListener("click", () => {
+          const answer = question.nextElementSibling;
+          const icon = question.querySelector("i");
+
+          // Toggle answer visibility
+          answer.classList.toggle("hidden");
+
+          // Rotate icon
+          if (answer.classList.contains("hidden")) {
+            icon.style.transform = "rotate(0deg)";
+          } else {
+            icon.style.transform = "rotate(180deg)";
+          }
+
+          // Close other open answers
+          faqQuestions.forEach((q) => {
+            if (q !== question) {
+              q.nextElementSibling.classList.add("hidden");
+              q.querySelector("i").style.transform = "rotate(0deg)";
+            }
+          });
+        });
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
+            });
+
+            // Close mobile menu if open
+            const mobileMenu = document.getElementById("mobile-menu");
+            if (!mobileMenu.classList.contains("hidden")) {
+              mobileMenu.classList.add("hidden");
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
